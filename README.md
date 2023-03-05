@@ -22,6 +22,6 @@ When setting up PyCharm, it expected an installation of Conda so that I can crea
 
 I then ran the test script given [here](https://developer.apple.com/metal/tensorflow-plugin/), this works by locally training the CIFAR100 dataset on a Resnet50 network. I ran this both on local M1 Pro as well as Google Colab GPU. Surprisingly, the local took 57sec per epoch, while Colab took 43sec per run - I am impressed that the local run is able to keep up.
 
-![Mac GPU getting fully utilised](embeds/Screenshot%202023-03-06%20at%2012.20.18%20AM.png)
+![Mac GPU getting fully utilised](static/Screenshot%202023-03-06%20at%2012.20.18%20AM.png)
 
 It is nice to see that the Mac GPU is getting used 100% for an ML task running in TensorFlow. Back in 2017 when I last tried these things out, this was not possible.
