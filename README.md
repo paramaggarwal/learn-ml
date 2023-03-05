@@ -30,7 +30,14 @@ It is nice to see that the Mac GPU is getting used 100% for an ML task running i
 
 Now we begin to work with greyscale images, here we will keep things simple and use a fully connected dense layer. The main thing to learn here is train vs test accuracy. Also figuring out a way to automatically stop training at certain point, this is introduced using callbacks.
 
-![train vs test accuracy graph](static/fashion_mnist_dense.png)
+![For Dense network, train vs test accuracy graph](static/fashion_mnist_dense.png)
 
-Here we can see that the model is overfitting very quickly, just one epoch is enough for it to learn most of what there is. After that test accuracy is not really improving even after we are training for 50 epochs!
+Here we can see that the model is overfitting very quickly, just one epoch is enough for it to learn most of what there is. After that test accuracy is not really improving even after we are training for 50 epochs! Test accuracy peaked at around 88%.
 
+## Fashion MNIST with Convolutional Neural Networks
+
+Now the above layer with 128 densely connected nodes is prefixed with a CNN feature extractor. Here again we will do the same exercise as above and see how much generalisation we can achieve - that is better accuracy on test set.
+
+![For CNN, train vs test accuracy graph](static/fashion_mnist_cnn.png)
+
+As you can see training set easily goes up to 99% (the model is rote-learned the data) but on testing set the gains are visible. Test accuracy in this case now peaks at 91%.
