@@ -7,7 +7,6 @@ class myCallback(tf.keras.callbacks.Callback):
         if (accuracy > 0.85):
             print("\nReached sufficient testing accuracy, stopping training!")
             self.model.stop_training = True
-            model.save('export/fashion-mnist-dense.h5')
 
 callbacks = myCallback()
 mnist = tf.keras.datasets.fashion_mnist
