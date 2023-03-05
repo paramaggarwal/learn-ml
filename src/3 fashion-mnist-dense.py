@@ -2,9 +2,12 @@ import tensorflow as tf
 
 class myCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs={}):
-        if (logs.get('accuracy') > 0.95):
-            print("\nReached 95% accuracy so cancelling training!")
+        accuracy = model.evaluate(test_images, test_labels, verbose=0)[1]
+        print("\nEpoch {} Accuracy :: Train: {} Test: {}\n".format(epoch, logs.get('accuracy'), accuracy))
+        if (accuracy > 0.85):
+            print("\nReached sufficient testing accuracy, stopping training!")
             self.model.stop_training = True
+            model.save('export/fashion-mnist-dense.h5')
 
 callbacks = myCallback()
 mnist = tf.keras.datasets.fashion_mnist
@@ -26,4 +29,3 @@ model.compile(optimizer='adam',
 
 model.fit(training_images, training_labels, epochs=50, callbacks=[callbacks])
 
-model.evaluate(test_images, test_labels)

@@ -25,3 +25,12 @@ I then ran the test script given [here](https://developer.apple.com/metal/tensor
 ![Mac GPU getting fully utilised](static/Screenshot%202023-03-06%20at%2012.20.18%20AM.png)
 
 It is nice to see that the Mac GPU is getting used 100% for an ML task running in TensorFlow. Back in 2017 when I last tried these things out, this was not possible.
+
+## Fashion MNIST with Dense Layers
+
+Now we begin to work with greyscale images, here we will keep things simple and use a fully connected dense layer. The main thing to learn here is train vs test accuracy. Also figuring out a way to automatically stop training at certain point, this is introduced using callbacks.
+
+![train vs test accuracy graph](static/Train_Test%20Accuracy.png)
+
+Here we can see that the model is overfitting very quickly, just one epoch is enough for it to learn most of what there is. After that test accuracy is not really improving even after we are training for 50 epochs!
+
